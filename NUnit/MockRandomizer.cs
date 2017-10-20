@@ -5,15 +5,22 @@ namespace NUnit
     public class MockRandomizer : IRandomizer
     {
         private readonly bool[] _returns;
-        private int current = 0;
+        private readonly int[] _indexes;
+        private int currentReturns = 0, currentIndexes;
 
-        public MockRandomizer(bool [] returns)
+        public MockRandomizer(bool [] returns, int[] indexes)
         {
             _returns = returns;
+            _indexes = indexes;
         }
         public bool ShouldBeDoneWith(double probability)
         {
-            return _returns[current++];
+            return _returns[currentReturns++];
+        }
+
+        public int Next(int maxLength)
+        {
+            return _indexes[currentIndexes++];
         }
     }
 }

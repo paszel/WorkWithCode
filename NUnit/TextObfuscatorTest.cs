@@ -8,16 +8,17 @@ namespace NUnit
     [TestFixture]
     public class TextObfuscatorTest
     {
-        [SetUp]
+        private Mock<IRandomizer> _mockRandomizer;
+        [OneTimeSetUp]
         public void Setup()
         {
+            _mockRandomizer = new Mock<IRandomizer>();
         }
 
         [Test]
         public void ShouldSwapLowerAndUpperCaseRandomly()
         {
-            var moq = new Mock<IRandomizer>();
-            moq.SetupSequence(m => m.ShouldBeDoneWith(It.IsAny<double>()))
+            _mockRandomizer.SetupSequence(m => m.ShouldBeDoneWith(It.IsAny<double>()))
                 .Returns(true)
                 .Returns(false)
                 .Returns(true)
@@ -25,10 +26,34 @@ namespace NUnit
                 .Returns(false)
                 .Returns(true);
 
-            var obfuscator = new TextObfuscator(moq.Object);
+            var obfuscator = new TextObfuscator(_mockRandomizer.Object);
 
             var result = obfuscator.CharactersTransformation("abcdef");
             Assert.AreEqual("AbCdeF", result);
+        }
+
+        [Test]
+        public void ShouldInsertSpecialCharactersRandomly()
+        {
+            _mockRandomizer.SetupSequence(m => m.ShouldBeDoneWith(It.IsAny<double>()))
+                .Returns(true)
+                .Returns(false)
+                .Returns(true)
+                .Returns(false)
+                .Returns(true)
+                .Returns(false)
+                .Returns(true);
+
+            _mockRandomizer.SetupSequence(m => m.Next(It.IsAny<int>()))
+                .Returns(0)
+                .Returns(2)
+                .Returns(1)
+                .Returns(2);
+
+            var obfuscator = new TextObfuscator(_mockRandomizer.Object);
+
+            var result = obfuscator.InsertSpecialCharacters("Ala ma kota a kot ma ale");
+            Assert.AreEqual("Ala.ma kota!a kot,ma ale", result);
         }
     }
 }

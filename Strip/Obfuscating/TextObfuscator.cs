@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Text.RegularExpressions;
 using Examples.Randomizer;
 
@@ -8,7 +7,6 @@ namespace Examples.Obfuscating
     public class TextObfuscator
     {
         //REFACTOR => move Convert method to TextPart as a factory method
-        private Random random = new Random();
         private readonly IRandomizer _randomizer;
 
         public TextObfuscator(IRandomizer randomizer)
@@ -93,7 +91,7 @@ namespace Examples.Obfuscating
             return result;
         }
 
-        private string InsertSpecialCharacters(string result)
+        public string InsertSpecialCharacters(string result)
         {
             var resultWords = "";
 
@@ -104,7 +102,7 @@ namespace Examples.Obfuscating
             {
                 if (_randomizer.ShouldBeDoneWith(0.5))
                 {
-                    var index = random.Next(specialChars.Length);
+                    var index = _randomizer.Next(specialChars.Length);// random.Next(specialChars.Length);
                     resultWords += words[i] + specialChars[index];
                 }
                 else
@@ -148,7 +146,7 @@ namespace Examples.Obfuscating
                 {
                     textParts.Insert(i, new TextPart(" ", TextPartType.NONWORD));
                     i++;
-                    var index = random.Next(obfuscatorWords.Length);
+                    var index = _randomizer.Next(obfuscatorWords.Length);
                     textParts.Insert(i, new TextPart(obfuscatorWords[index], TextPartType.WORD));
                     i++;
                     textParts.Insert(i, new TextPart(" ", TextPartType.NONWORD));
