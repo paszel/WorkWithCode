@@ -1,0 +1,6 @@
+C:\Projekty\TechnikaPracyZKodem\CriteriaBuilder\bin\Debug\CriteriaBuilder.exe.config
+C:\Projekty\TechnikaPracyZKodem\CriteriaBuilder\bin\Debug\CriteriaBuilder.exe
+C:\Projekty\TechnikaPracyZKodem\CriteriaBuilder\bin\Debug\CriteriaBuilder.pdb
+C:\Projekty\TechnikaPracyZKodem\CriteriaBuilder\obj\Debug\CriteriaBuilder.exe
+C:\Projekty\TechnikaPracyZKodem\CriteriaBuilder\obj\Debug\CriteriaBuilder.pdb
+C:\Projekty\TechnikaPracyZKodem\CriteriaBuilder\obj\Debug\CriteriaBuilder.csprojResolveAssemblyReference.cache

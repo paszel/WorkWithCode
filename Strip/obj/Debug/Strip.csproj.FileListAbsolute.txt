@@ -1,0 +1,6 @@
+C:\Projekty\TechnikaPracyZKodem\Strip\bin\Debug\Strip.exe.config
+C:\Projekty\TechnikaPracyZKodem\Strip\bin\Debug\Strip.exe
+C:\Projekty\TechnikaPracyZKodem\Strip\bin\Debug\Strip.pdb
+C:\Projekty\TechnikaPracyZKodem\Strip\obj\Debug\Strip.csprojResolveAssemblyReference.cache
+C:\Projekty\TechnikaPracyZKodem\Strip\obj\Debug\Strip.exe
+C:\Projekty\TechnikaPracyZKodem\Strip\obj\Debug\Strip.pdb

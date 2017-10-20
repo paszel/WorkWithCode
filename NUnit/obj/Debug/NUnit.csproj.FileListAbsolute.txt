@@ -1,0 +1,10 @@
+C:\Projekty\TechnikaPracyZKodem\NUnit\bin\Debug\NUnit.dll
+C:\Projekty\TechnikaPracyZKodem\NUnit\bin\Debug\NUnit.pdb
+C:\Projekty\TechnikaPracyZKodem\NUnit\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Projekty\TechnikaPracyZKodem\NUnit\bin\Debug\nunit.framework.dll
+C:\Projekty\TechnikaPracyZKodem\NUnit\bin\Debug\Strip.exe
+C:\Projekty\TechnikaPracyZKodem\NUnit\bin\Debug\Strip.pdb
+C:\Projekty\TechnikaPracyZKodem\NUnit\bin\Debug\nunit.framework.xml
+C:\Projekty\TechnikaPracyZKodem\NUnit\obj\Debug\NUnit.csprojResolveAssemblyReference.cache
+C:\Projekty\TechnikaPracyZKodem\NUnit\obj\Debug\NUnit.dll
+C:\Projekty\TechnikaPracyZKodem\NUnit\obj\Debug\NUnit.pdb

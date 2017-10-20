@@ -1,0 +1,15 @@
+C:\Projekty\Line\Line\bin\Debug\Line.exe.config
+C:\Projekty\Line\Line\bin\Debug\Line.exe
+C:\Projekty\Line\Line\bin\Debug\Line.pdb
+C:\Projekty\Line\Line\obj\Debug\Line.csprojResolveAssemblyReference.cache
+C:\Projekty\Line\Line\obj\Debug\Line.exe
+C:\Projekty\Line\Line\obj\Debug\Line.pdb
+C:\Projekty\TechnikaPracyZKodem\Line\bin\Debug\Line.exe.config
+C:\Projekty\TechnikaPracyZKodem\Line\obj\Debug\Line.exe
+C:\Projekty\TechnikaPracyZKodem\Line\obj\Debug\Line.pdb
+C:\Projekty\TechnikaPracyZKodem\Line\bin\Debug\Line.exe
+C:\Projekty\TechnikaPracyZKodem\Line\bin\Debug\Line.pdb
+C:\Projekty\TechnikaPracyZKodem\Line\obj\Debug\Line.csprojResolveAssemblyReference.cache
+C:\Projekty\TechnikaPracyZKodem\Line\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Projekty\TechnikaPracyZKodem\Line\bin\Debug\nunit.framework.dll
+C:\Projekty\TechnikaPracyZKodem\Line\bin\Debug\nunit.framework.xml
