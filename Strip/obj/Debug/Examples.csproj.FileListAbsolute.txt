@@ -1,0 +1,6 @@
+C:\Projekty\TechnikaPracyZKodem\Strip\obj\Debug\Examples.csprojResolveAssemblyReference.cache
+C:\Projekty\TechnikaPracyZKodem\Strip\bin\Debug\Examples.exe.config
+C:\Projekty\TechnikaPracyZKodem\Strip\bin\Debug\Examples.exe
+C:\Projekty\TechnikaPracyZKodem\Strip\bin\Debug\Examples.pdb
+C:\Projekty\TechnikaPracyZKodem\Strip\obj\Debug\Examples.exe
+C:\Projekty\TechnikaPracyZKodem\Strip\obj\Debug\Examples.pdb

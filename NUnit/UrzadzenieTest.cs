@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using Strip;
+using Examples;
 
 namespace NUnit
 {

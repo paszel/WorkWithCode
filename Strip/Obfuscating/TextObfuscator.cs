@@ -1,13 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
+using Examples.Randomizer;
 
-namespace Strip.Obfuscating
+namespace Examples.Obfuscating
 {
     public class TextObfuscator
     {
         //REFACTOR => move Convert method to TextPart as a factory method
         private Random random = new Random();
+        private readonly IRandomizer _randomizer;
+
+        public TextObfuscator(IRandomizer randomizer)
+        {
+            _randomizer = randomizer;
+        }
 
         public string Convert(string text)
         {
@@ -32,7 +39,7 @@ namespace Strip.Obfuscating
             return result;
         }
 
-        private string CharactersTransformation(string result)
+        public string CharactersTransformation(string result)
         {
             var resultCharacteres = "";
             var wordCharts = result.ToCharArray();
@@ -40,7 +47,7 @@ namespace Strip.Obfuscating
             //NOTE => some characters toUpper, some toLower (LitWO...)
             foreach (var item in wordCharts)
             {
-                if (random.NextDouble() < 0.3)
+                if (_randomizer.ShouldBeDoneWith(0.3))
                 {
                     char? newCh;
                     if (char.IsLower(item))
@@ -95,7 +102,7 @@ namespace Strip.Obfuscating
             //NOTE => add [.,!] between words
             for (var i = 0; i < words.Length - 1; i++)
             {
-                if (random.NextDouble() < 0.5)
+                if (_randomizer.ShouldBeDoneWith(0.5))
                 {
                     var index = random.Next(specialChars.Length);
                     resultWords += words[i] + specialChars[index];
@@ -137,7 +144,7 @@ namespace Strip.Obfuscating
 
             for (var i = 0; i < textParts.Count; i++)
             {
-                if (random.NextDouble() < 0.2)
+                if (_randomizer.ShouldBeDoneWith( 0.2))
                 {
                     textParts.Insert(i, new TextPart(" ", TextPartType.NONWORD));
                     i++;
@@ -171,7 +178,7 @@ namespace Strip.Obfuscating
 
         private bool NeedSwap(TextPart element, int index, int length)
         {
-            return element.IsWord() && random.NextDouble() < 0.2 && index + 2 < length;
+            return element.IsWord() && _randomizer.ShouldBeDoneWith(0.2) && index + 2 < length;
         }
     }
 }

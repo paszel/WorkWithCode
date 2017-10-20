@@ -4,3 +4,5 @@ C:\Projekty\TechnikaPracyZKodem\CriteriaBuilder\bin\Debug\CriteriaBuilder.pdb
 C:\Projekty\TechnikaPracyZKodem\CriteriaBuilder\obj\Debug\CriteriaBuilder.exe
 C:\Projekty\TechnikaPracyZKodem\CriteriaBuilder\obj\Debug\CriteriaBuilder.pdb
 C:\Projekty\TechnikaPracyZKodem\CriteriaBuilder\obj\Debug\CriteriaBuilder.csprojResolveAssemblyReference.cache
+C:\Projekty\TechnikaPracyZKodem\CriteriaBuilder\bin\Debug\nunit.framework.dll
+C:\Projekty\TechnikaPracyZKodem\CriteriaBuilder\bin\Debug\nunit.framework.xml

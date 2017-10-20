@@ -1,4 +1,4 @@
-﻿namespace Strip
+﻿namespace Examples
 {
     public class Urzadzenie
     {

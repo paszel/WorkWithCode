@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Line", "Line\Line.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CriteriaBuilder", "CriteriaBuilder\CriteriaBuilder.csproj", "{53CD3119-3DE9-417F-B4DD-19CA966C1033}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Strip", "Strip\Strip.csproj", "{FA4EE62F-75C2-4561-A040-B51BC8B1851A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Examples", "Strip\Examples.csproj", "{FA4EE62F-75C2-4561-A040-B51BC8B1851A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NUnit", "NUnit\NUnit.csproj", "{66E22702-F518-47B6-8F1E-8E325F73484D}"
 EndProject

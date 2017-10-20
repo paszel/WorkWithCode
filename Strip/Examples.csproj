@@ -7,8 +7,8 @@
     <ProjectGuid>{FA4EE62F-75C2-4561-A040-B51BC8B1851A}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Strip</RootNamespace>
-    <AssemblyName>Strip</AssemblyName>
+    <RootNamespace>Examples</RootNamespace>
+    <AssemblyName>Examples</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,17 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Randomizer\DefaultRandomizer.cs" />
+    <Compile Include="Randomizer\IRandomizer.cs" />
     <Compile Include="Obfuscating\TextManagerHelper.cs" />
     <Compile Include="Obfuscating\TextObfuscator.cs" />
     <Compile Include="Obfuscating\TextPart.cs" />
     <Compile Include="Urzadzenie.cs" />
     <Compile Include="Helpers.cs" />
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
