@@ -3,6 +3,6 @@
     public interface IRandomizer
     {
         bool ShouldBeDoneWith(double probability);
-        int Next(int maxLength);
+        int RandomInteger(int maxLength);
     }
 }

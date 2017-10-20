@@ -44,7 +44,7 @@ namespace NUnit
                 .Returns(false)
                 .Returns(true);
 
-            _mockRandomizer.SetupSequence(m => m.Next(It.IsAny<int>()))
+            _mockRandomizer.SetupSequence(m => m.RandomInteger(It.IsAny<int>()))
                 .Returns(0)
                 .Returns(2)
                 .Returns(1)

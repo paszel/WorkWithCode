@@ -11,7 +11,7 @@ namespace Examples.Randomizer
             return _random.NextDouble() < probability;
         }
 
-        public int Next(int maxLength)
+        public int RandomInteger(int maxLength)
         {
             return _random.Next(maxLength);
         }

@@ -18,7 +18,7 @@ namespace NUnit
             return _returns[currentReturns++];
         }
 
-        public int Next(int maxLength)
+        public int RandomInteger(int maxLength)
         {
             return _indexes[currentIndexes++];
         }

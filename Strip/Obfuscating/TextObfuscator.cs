@@ -102,7 +102,7 @@ namespace Examples.Obfuscating
             {
                 if (_randomizer.ShouldBeDoneWith(0.5))
                 {
-                    var index = _randomizer.Next(specialChars.Length);// random.Next(specialChars.Length);
+                    var index = _randomizer.RandomInteger(specialChars.Length);// random.Next(specialChars.Length);
                     resultWords += words[i] + specialChars[index];
                 }
                 else
@@ -146,7 +146,7 @@ namespace Examples.Obfuscating
                 {
                     textParts.Insert(i, new TextPart(" ", TextPartType.NONWORD));
                     i++;
-                    var index = _randomizer.Next(obfuscatorWords.Length);
+                    var index = _randomizer.RandomInteger(obfuscatorWords.Length);
                     textParts.Insert(i, new TextPart(obfuscatorWords[index], TextPartType.WORD));
                     i++;
                     textParts.Insert(i, new TextPart(" ", TextPartType.NONWORD));
@@ -178,5 +178,10 @@ namespace Examples.Obfuscating
         {
             return element.IsWord() && _randomizer.ShouldBeDoneWith(0.2) && index + 2 < length;
         }
+    }
+
+    public class Obfuscations 
+    {
+
     }
 }
