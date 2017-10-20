@@ -43,6 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Obfuscating\TextManagerHelper.cs" />
+    <Compile Include="Obfuscating\TextObfuscator.cs" />
+    <Compile Include="Obfuscating\TextPart.cs" />
     <Compile Include="Urzadzenie.cs" />
     <Compile Include="Helpers.cs" />
     <Compile Include="Program.cs" />
