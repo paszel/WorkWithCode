@@ -26,7 +26,7 @@ namespace NUnit
                 .Returns(false)
                 .Returns(true);
 
-            var obfuscator = new TextObfuscator(_mockRandomizer.Object);
+            var obfuscator = new Obfuscations(_mockRandomizer.Object);
 
             var result = obfuscator.CharactersTransformation("abcdef");
             Assert.AreEqual("AbCdeF", result);
@@ -50,7 +50,7 @@ namespace NUnit
                 .Returns(1)
                 .Returns(2);
 
-            var obfuscator = new TextObfuscator(_mockRandomizer.Object);
+            var obfuscator = new Obfuscations(_mockRandomizer.Object);
 
             var result = obfuscator.InsertSpecialCharacters("Ala ma kota a kot ma ale");
             Assert.AreEqual("Ala.ma kota!a kot,ma ale", result);

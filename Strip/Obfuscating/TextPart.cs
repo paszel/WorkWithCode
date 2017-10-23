@@ -14,22 +14,22 @@ namespace Examples.Obfuscating
         private TextPartType _type;
         public TextPartType Type { get { return _type; } }
 
-        public TextPart(String contents, TextPartType type)
+        public TextPart(string contents, TextPartType type)
         {
-            this._contents = contents;
-            this._type = type;
+            _contents = contents;
+            _type = type;
         }
 
         public bool IsWord() => Type.Equals(TextPartType.WORD);
 
         public static List<TextPart> From(string text)
         {
-            List<TextPart> textParts = new List<TextPart>();
+            var textParts = new List<TextPart>();
+            var matchCollection = Regex.Matches(text, @"(\w+|\W+)");
 
-            MatchCollection matchCollection = Regex.Matches(text, @"(\w+|\W+)");
             foreach (Match match in matchCollection)
             {
-                String foundPart = match.Groups[0].ToString();
+                var foundPart = match.Groups[0].ToString();
                 if (Regex.IsMatch(foundPart, @"\w+"))
                 {
                     textParts.Add(new TextPart(foundPart, TextPartType.WORD));
@@ -41,6 +41,19 @@ namespace Examples.Obfuscating
             }
             return textParts;
         }
+
+        public static string ToString(IEnumerable<TextPart> textParts)
+        {
+            var result = "";
+
+            foreach (var part in textParts)
+            {
+                result += part.Contents;
+            }
+
+            return result;
+        }
+
     }
 
     public enum TextPartType
