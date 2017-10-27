@@ -23,7 +23,7 @@ namespace Examples.Obfuscating
             var result = TextPart.ToString(textParts);
             result = _obfuscations.RemovePunctuationMarks(result);
             result = _obfuscations.InsertSpecialCharacters(result);
-            result = _obfuscations.RemovePolishSigns(result);
+            result = _obfuscations.ReplacePolishSigns(result);
             result = _obfuscations.CharactersTransformation(result);
             result = _obfuscations.RemoveWhiteSpaces(result);
 

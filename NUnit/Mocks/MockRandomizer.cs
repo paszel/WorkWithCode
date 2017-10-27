@@ -1,6 +1,6 @@
-using Examples.Randomizer;
+﻿using Examples.Randomizer;
 
-namespace NUnit
+namespace NUnit.Mocks
 {
     public class MockRandomizer : IRandomizer
     {
@@ -8,7 +8,7 @@ namespace NUnit
         private readonly int[] _indexes;
         private int currentReturns = 0, currentIndexes;
 
-        public MockRandomizer(bool [] returns, int[] indexes)
+        public MockRandomizer(bool[] returns, int[] indexes)
         {
             _returns = returns;
             _indexes = indexes;

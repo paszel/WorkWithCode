@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Text;
 using System.Text.RegularExpressions;
 using Examples.Randomizer;
 
@@ -15,27 +16,23 @@ namespace Examples.Obfuscating
 
         public string InsertSpecialCharacters(string result)
         {
-            var resultWords = "";
-
             var specialChars = new[] { '.', ',', '!' };
             var words = result.Split(' ');
-            //NOTE => add [.,!] between words
+            
             for (var i = 0; i < words.Length - 1; i++)
             {
                 if (_randomizer.ShouldBeDoneWith(0.5))
                 {
-                    var index = _randomizer.RandomInteger(specialChars.Length);// random.Next(specialChars.Length);
-                    resultWords += words[i] + specialChars[index];
+                    var index = _randomizer.RandomInteger(specialChars.Length);
+                    words[i] += specialChars[index];
                 }
                 else
                 {
-                    resultWords += words[i] + " ";
+                    words[i] += " ";
                 }
             }
 
-            resultWords += words[words.Length - 1];
-
-            return resultWords;
+            return string.Join("", words);
 
         }
 
@@ -46,56 +43,24 @@ namespace Examples.Obfuscating
 
         public string CharactersTransformation(string result)
         {
-            var resultCharacteres = "";
-            var wordCharts = result.ToCharArray();
+            var array = result.ToCharArray();
 
-            //NOTE => some characters toUpper, some toLower (LitWO...)
-            foreach (var item in wordCharts)
+            for (var i = 0; i < array.Length; i++)
             {
+                var item = array[i];
+
                 if (_randomizer.ShouldBeDoneWith(0.3))
                 {
-                    char? newCh;
-                    if (char.IsLower(item))
-                    {
-                        newCh = char.ToUpper(item);
-                    }
-                    else
-                    {
-                        newCh = char.ToLower(item);
-                    }
-
-                    resultCharacteres += newCh;
-                }
-                else
-                {
-                    resultCharacteres += item;
+                    array[i] = char.IsLower(item) ? char.ToUpper(item) : char.ToLower(item); 
                 }
             }
-            return resultCharacteres;
+
+            return string.Join("", array);
         }
 
-        public string RemovePolishSigns(string result)
+        public string ReplacePolishSigns(string result)
         {
-            result = result
-                .Replace("ą", "a")
-                .Replace("ł", "l")
-                .Replace("ę", "e")
-                .Replace("ń", "n")
-                .Replace("ż", "z")
-                .Replace("ź", "z")
-                .Replace("ó", "o")
-                .Replace("ś", "s")
-                .Replace("ć", "c")
-                .Replace("Ą", "A")
-                .Replace("Ł", "L")
-                .Replace("Ę", "E")
-                .Replace("Ń", "N")
-                .Replace("Ż", "Z")
-                .Replace("Ź", "Z")
-                .Replace("Ó", "O")
-                .Replace("Ś", "S");
-
-            return result;
+            return Encoding.ASCII.GetString(Encoding.GetEncoding("Cyrillic").GetBytes(result));
         }
 
         public string RemovePunctuationMarks(string result)
@@ -110,15 +75,15 @@ namespace Examples.Obfuscating
 
             for (var i = 0; i < textParts.Count; i++)
             {
-                if (_randomizer.ShouldBeDoneWith(0.2))
-                {
-                    textParts.Insert(i, new TextPart(" ", TextPartType.NONWORD));
-                    i++;
-                    var index = _randomizer.RandomInteger(obfuscatorWords.Length);
-                    textParts.Insert(i, new TextPart(obfuscatorWords[index], TextPartType.WORD));
-                    i++;
-                    textParts.Insert(i, new TextPart(" ", TextPartType.NONWORD));
-                }
+                if (!_randomizer.ShouldBeDoneWith(0.2))
+                    continue;
+
+                textParts.Insert(i, new TextPart(" ", TextPartType.NONWORD));
+                i++;
+                var index = _randomizer.RandomInteger(obfuscatorWords.Length);
+                textParts.Insert(i, new TextPart(obfuscatorWords[index], TextPartType.WORD));
+                i++;
+                textParts.Insert(i, new TextPart(" ", TextPartType.NONWORD));
             }
 
             return textParts;
@@ -127,22 +92,22 @@ namespace Examples.Obfuscating
         public List<TextPart> SwapWords(List<TextPart> textParts)
         {
             //NOTE => swap some words, depends on random
-            for (var i = 0; i < textParts.Count; i++)
+            for (var i = 0; i < textParts.Count - 2; i++)
             {
-                if (NeedSwap(textParts[i], i, textParts.Count))
-                {
-                    var temp = textParts[i];
-                    textParts[i] = textParts[i + 2];
-                    textParts[i + 2] = temp;
-                }
+                if (!NeedSwap(textParts[i]))
+                    continue;
+
+                var temp = textParts[i];
+                textParts[i] = textParts[i + 2];
+                textParts[i + 2] = temp;
             }
 
             return textParts;
         }
 
-        private bool NeedSwap(TextPart element, int index, int length)
+        private bool NeedSwap(TextPart element)
         {
-            return element.IsWord() && _randomizer.ShouldBeDoneWith(0.2) && index + 2 < length;
+            return element.IsWord() && _randomizer.ShouldBeDoneWith(0.2);
         }
     }
 }

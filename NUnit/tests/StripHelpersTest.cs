@@ -1,7 +1,7 @@
-﻿using NUnit.Framework;
-using Examples;
+﻿using Examples;
+using NUnit.Framework;
 
-namespace NUnit
+namespace NUnit.Tests
 {
     [TestFixture]
     public class StripHelpersTest

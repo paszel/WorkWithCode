@@ -63,12 +63,12 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="MockRandomizer.cs" />
-    <Compile Include="PeselValidatorTest.cs" />
-    <Compile Include="TextObfuscatorTest.cs" />
-    <Compile Include="UrzadzenieTest.cs" />
-    <Compile Include="StripHelpersTest.cs" />
+    <Compile Include="Mocks\MockRandomizer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\UrzadzenieTest.cs" />
+    <Compile Include="Tests\TextObfuscatorTest.cs" />
+    <Compile Include="Tests\StripHelpersTest.cs" />
+    <Compile Include="Tests\PeselValidatorTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

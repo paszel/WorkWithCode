@@ -1,18 +1,11 @@
-﻿using NUnit.Framework;
-using Examples;
+﻿using Examples;
+using NUnit.Framework;
 
-namespace NUnit
+namespace NUnit.Tests
 {
     [TestFixture]
     public class PeselValidatorTest
     {
-        PeselValidator _validator;
-        [OneTimeSetUp]
-        public void SetUp()
-        {
-            _validator = new PeselValidator();
-        }
-
         [TestCase(null, false)]
         [TestCase(" ", false)]
         [TestCase("           ", false)]
